@@ -47,8 +47,9 @@ void SpineExtension::setInstance(SpineExtension *inValue) {
 }
 
 SpineExtension *SpineExtension::getInstance() {
-	//if (!_instance) _instance = spine::getDefaultExtension();	// xx
-	assert(_instance);
+	// xx
+	//if (!_instance) _instance = spine::getDefaultExtension();
+	//assert(_instance);
 
 	return _instance;
 }

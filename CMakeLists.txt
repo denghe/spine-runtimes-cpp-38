@@ -15,3 +15,10 @@ file(GLOB SPINE_SRCS
 add_library(spine STATIC
     ${SPINE_SRCS}
 )
+
+if(MSVC)
+	add_compile_options($<$<PLATFORM_ID:Windows>:/MP${Biogears_BUILD_PARALLEL_LEVEL}>)
+	target_compile_options(spine PRIVATE
+		$<$<PLATFORM_ID:Windows>:/MP${Biogears_BUILD_PARALLEL_LEVEL}>
+	)
+endif()
